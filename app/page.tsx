@@ -94,7 +94,7 @@ export default async function HomePage() {
             </div>
           ) : (
             <a
-              href="/profile"
+              href="/login"
               className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm font-medium transition"
             >
               Log In
