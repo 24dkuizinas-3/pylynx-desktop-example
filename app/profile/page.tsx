@@ -9,7 +9,7 @@ export default async function ProfilePage() {
   const { data: session } = await auth.getSession();
 
   if (!session?.user) {
-    redirect('/signin');
+    redirect('/login');
   }
 
   // Fetch avatar from profiles table

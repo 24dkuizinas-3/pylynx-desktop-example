@@ -7,7 +7,7 @@ export default async function RemixPage() {
   const { data: session } = await auth.getSession();
 
   if (!session?.user) {
-    redirect('/signin');
+    redirect('/login');
   }
 
   return (

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+// @ts-ignore: allow importing global CSS in this environment
 import "./globals.css";
+import { NeonAuthUIProvider } from '@neondatabase/auth-ui';
+import { authClient } from '@/lib/auth/client';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +27,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {/* Wrapping children makes the imports active and applies global auth context */}
+        <NeonAuthUIProvider authClient={authClient as any}>
+          {children}
+        </NeonAuthUIProvider>
+      </body>
     </html>
   );
 }
