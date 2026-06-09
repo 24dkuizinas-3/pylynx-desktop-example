@@ -61,10 +61,11 @@ export default function HomePage() {
       
 <Script
   async
-  src={`https://googlesyndication.com{process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}`}
+  src={"https://googlesyndication.com" + process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}
   crossOrigin="anonymous"
   strategy="afterInteractive"
 />
+
 
       <div className="min-h-screen bg-gradient-to-br from-black via-[#0a0014] to-[#12002b] text-white flex flex-col">
         {/* TOP BAR WITH LOGIN */}
