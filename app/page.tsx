@@ -55,10 +55,12 @@ export default function HomePage() {
               })();
 
               window.intercomSettings = {
-                app_id: "${lazx153i}"
+                app_id: "lazx153i"
               };
               
-              window.Intercom('boot', window.intercomSettings);
+              if (window.Intercom) {
+                window.Intercom('boot', window.intercomSettings);
+              }
             `,
           }}
         />
@@ -138,4 +140,4 @@ export default function HomePage() {
       </div>
     </>
   );
-</
+}
