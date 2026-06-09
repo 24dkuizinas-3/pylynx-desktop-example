@@ -62,7 +62,7 @@ export default function SignupPage() {
         </form>
 
         <div className="flex justify-center mt-6 text-sm text-zinc-400">
-          <button onClick={() => router.push("/auth/sign-in")} className="hover:text-white transition">
+          <button onClick={() => router.push("/sign-in")} className="hover:text-white transition">
             Already have an account? Log in
           </button>
         </div>

@@ -61,10 +61,10 @@ export default function SignInPage() {
         </button>
 
         <div className="flex justify-between mt-6 text-sm text-zinc-400">
-          <button onClick={() => router.push("/auth/sign-up")} className="hover:text-white transition">
+          <button onClick={() => router.push("/sign-up")} className="hover:text-white transition">
             Create account
           </button>
-          <button onClick={() => router.push("/auth/reset")} className="hover:text-white transition">
+          <button onClick={() => router.push("/reset")} className="hover:text-white transition">
             Forgot password
           </button>
         </div>
