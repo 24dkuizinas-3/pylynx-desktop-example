@@ -1,4 +1,4 @@
 {
-  "image": "mcr.microsoft.com/ubuntu/devcontainers/base:22.04",
+  "image": "microsoft.com",
   "features": {}
 }
