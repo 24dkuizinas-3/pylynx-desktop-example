@@ -1,5 +1,6 @@
 "use client";
 
+import { Analytics } from "@vercel/analytics/next"
 import { useRouter } from "next/navigation";
 import Script from "next/script";
 import Image from "next/image";
@@ -14,17 +15,58 @@ export default function HomePage() {
           async
           src="https://pylynxosproject1.statuspage.io/embed/script.js"></script>
           
-                
-        
+                <Script
+        id="intercom-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(){
+              var w=window;
+              var ic=w.Intercom;
+              if(typeof ic==="function"){
+                ic('reattach_activator');
+                ic('update', w.intercomSettings);
+              }else{
+                var d=document;
+                var i=function(){i.c(arguments);};
+                i.q=[];
+                i.c=function(args){i.q.push(args);};
+                w.Intercom=i;
+                var l=function(){
+                  var s=d.createElement('script');
+                  s.type='text/javascript';
+                  s.async=true;
+                  s.src='https://intercom.io{APP_ID}';
+                  var x=d.getElementsByTagName('script')[0];
+                  x.parentNode.insertBefore(s,x);
+                };
+                if(document.readyState==='complete'){
+                  l();
+                }else{
+                  if(w.attachEvent){
+                    w.attachEvent('onload',l);
+                  }else{
+                    w.addEventListener('load',l,false);
+                  }
+                }
+              }
+            })();
+
+            window.intercomSettings = {
+              app_id: "${lazx153i}"
+            };
+            
+            window.Intercom('boot', window.intercomSettings);
       
+        ></script>
       
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}`}
-          crossOrigin="anonymous"
-          
-          
-      ></script>
+<Script
+  async
+  src={"https://googlesyndication.com" + process.env.NEXT_PUBLIC_GOOGLE_ADSENSE}
+  crossOrigin="anonymous"
+  strategy="afterInteractive"
+/>
+
 
       <div className="min-h-screen bg-gradient-to-br from-black via-[#0a0014] to-[#12002b] text-white flex flex-col">
         {/* TOP BAR WITH LOGIN */}
@@ -93,4 +135,3 @@ export default function HomePage() {
       </div>
     </>
   );
-}
