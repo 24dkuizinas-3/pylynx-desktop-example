@@ -1,5 +1,6 @@
 "use client";
 
+import { Analytics } from "@vercel/analytics/next"
 import { useRouter } from "next/navigation";
 import Script from "next/script";
 import Image from "next/image";
